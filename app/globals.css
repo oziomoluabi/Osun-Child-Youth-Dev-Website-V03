@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 204, 214, 246; /* brand-light-gray */
+  --background-start-rgb: 13, 26, 38; /* brand-dark-blue */
+  --background-end-rgb: 10, 16, 28; /* brand-dark */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: var(--brand-dark-blue);
+  background-image: var(--dotted-matrix-bg-image);
+  background-size: 15px 15px;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark-blue text-brand-gray bg-dotted-matrix;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .clip-angled-br {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%);
+  }
+  .clip-angled-tl {
+     clip-path: polygon(0 10%, 10% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  .hud-border {
+    @apply border border-brand-teal/20;
+  }
+  .hud-bg {
+    @apply bg-brand-dark/50 backdrop-blur-sm;
+  }
+}
+
+/* For Recharts */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+.recharts-surface {
+  overflow: visible; /* Prevents labels from being cut off */
+}
+
+/* Custom scrollbar for a more thematic feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D1A26;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A344D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #66F4E1;
+}
