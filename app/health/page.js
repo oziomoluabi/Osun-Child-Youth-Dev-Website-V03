@@ -1,31 +1,25 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, PieChart, Pie, Cell } from 'recharts';
+'use client';
+
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Stethoscope, Syringe, Heart, Radio } from 'lucide-react';
 import Image from 'next/image';
 
-
-const ClientChart = ({ data, type }) => {
-    'use client';
-
-    const COLORS = ['#66F4E1', '#7DFDFE', '#8892B0'];
-
-    if (type === 'stackedBar') {
-        return (
-             <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(102, 244, 225, 0.2)" />
-                    <XAxis type="number" stroke="#8892B0" fontSize={12} />
-                    <YAxis dataKey="name" type="category" stroke="#8892B0" fontSize={12} width={80}/>
-                    <Tooltip contentStyle={{ backgroundColor: '#0D1A26', border: '1px solid #1A344D' }}/>
-                    <Legend />
-                    <Bar dataKey="stunting" stackId="a" fill="#66F4E1" name="Stunting" />
-                    <Bar dataKey="wasting" stackId="a" fill="#7DFDFE" name="Wasting" />
-                    <Bar dataKey="underweight" stackId="a" fill="#8892B0" name="Underweight" />
-                </BarChart>
-            </ResponsiveContainer>
-        );
-    }
-    return null;
-}
+const HealthStackedBarChart = ({ data }) => {
+    return (
+        <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(102, 244, 225, 0.2)" />
+                <XAxis type="number" stroke="#8892B0" fontSize={12} />
+                <YAxis dataKey="name" type="category" stroke="#8892B0" fontSize={12} width={80}/>
+                <Tooltip contentStyle={{ backgroundColor: '#0D1A26', border: '1px solid #1A344D' }}/>
+                <Legend />
+                <Bar dataKey="stunting" stackId="a" fill="#66F4E1" name="Stunting" />
+                <Bar dataKey="wasting" stackId="a" fill="#7DFDFE" name="Wasting" />
+                <Bar dataKey="underweight" stackId="a" fill="#8892B0" name="Underweight" />
+            </BarChart>
+        </ResponsiveContainer>
+    );
+};
 
 export default function HealthPage() {
     const nutritionData = [
@@ -46,7 +40,7 @@ export default function HealthPage() {
                 <div className="hud-bg hud-border p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-brand-light-gray mb-2">Malnutrition Rates: Osun vs. National (%)</h3>
                     <div style={{width: '100%', height: '300px'}}>
-                       <ClientChart data={nutritionData} type="stackedBar" />
+                       <HealthStackedBarChart data={nutritionData} />
                     </div>
                 </div>
             </section>
@@ -84,7 +78,7 @@ export default function HealthPage() {
                 <h2 className="text-2xl font-bold text-brand-teal mb-4 font-mono">2.4 Programs & Interventions</h2>
                 <p className="text-brand-gray mb-6">Collaborations with UNICEF, USAID, and others bolster public health initiatives, from immunization drives to adolescent-friendly health services.</p>
                  <div className="relative h-64 rounded-lg overflow-hidden hud-border">
-                    <Image src="https://images.unsplash.com/photo-1576091160550-2173dba9996a?q=80&w=1770&auto=format&fit=crop" alt="Healthcare worker with a laptop" layout="fill" objectFit="cover" />
+                    <Image src="https://images.unsplash.com/photo-1576091160550-2173dba9996a?q=80&w=1770&auto=format&fit=crop" alt="Healthcare worker with a laptop" fill className="object-cover" />
                     <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-4">
                         <Radio className="w-12 h-12 text-brand-teal mb-4"/>
                         <h4 className="text-xl font-bold text-white">Community Radio &quot;Youth Voice&quot;</h4>

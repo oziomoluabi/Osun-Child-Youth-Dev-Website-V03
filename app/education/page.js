@@ -1,27 +1,41 @@
+'use client';
+
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend } from 'recharts';
-import { ArrowRight, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 import Image from 'next/image';
 
-// Client component for charts to avoid hydration errors
-const ClientChart = ({ data, type }) => {
-  'use client';
-  if (type === 'line') {
+const EducationLineChart = ({ data }) => {
     return (
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(102, 244, 225, 0.2)" />
-          <XAxis dataKey="name" stroke="#8892B0" fontSize={12} />
-          <YAxis stroke="#8892B0" fontSize={12} />
-          <Tooltip contentStyle={{ backgroundColor: '#0D1A26', border: '1px solid #1A344D' }} />
-          <Legend />
-          <Line type="monotone" dataKey="Male" stroke="#7DFDFE" name="Male Rate" />
-          <Line type="monotone" dataKey="Female" stroke="#66F4E1" name="Female Rate" />
-        </LineChart>
-      </ResponsiveContainer>
+        <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={data}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(102, 244, 225, 0.2)" />
+                <XAxis dataKey="name" stroke="#8892B0" fontSize={12} />
+                <YAxis stroke="#8892B0" fontSize={12} />
+                <Tooltip contentStyle={{ backgroundColor: '#0D1A26', border: '1px solid #1A344D' }} />
+                <Legend />
+                <Line type="monotone" dataKey="Male" stroke="#7DFDFE" name="Male Rate" />
+                <Line type="monotone" dataKey="Female" stroke="#66F4E1" name="Female Rate" />
+            </LineChart>
+        </ResponsiveContainer>
     );
-  }
-  return null;
 };
+
+const EducationBarChart = ({ data }) => {
+    return (
+         <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={data}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(102, 244, 225, 0.2)" />
+                <XAxis dataKey="name" stroke="#8892B0" fontSize={12} />
+                <YAxis stroke="#8892B0" fontSize={12} />
+                <Tooltip contentStyle={{ backgroundColor: '#0D1A26', border: '1px solid #1A344D' }} />
+                <Legend />
+                <Bar dataKey="WAEC" fill="#66F4E1" name="WAEC Pass %" />
+                <Bar dataKey="NECO" fill="#7DFDFE" name="NECO Pass %" />
+            </BarChart>
+        </ResponsiveContainer>
+    );
+};
+
 
 export default function EducationPage() {
     const outOfSchoolData = [
@@ -52,7 +66,7 @@ export default function EducationPage() {
                 <div className="hud-bg hud-border p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-brand-light-gray mb-2">Out-of-School Rate Over Time (by Gender)</h3>
                     <div style={{width: '100%', height: '300px'}}>
-                        <ClientChart data={outOfSchoolData} type="line" />
+                        <EducationLineChart data={outOfSchoolData} />
                     </div>
                 </div>
                 <div className="mt-6 grid md:grid-cols-2 gap-6">
@@ -82,7 +96,7 @@ export default function EducationPage() {
                         <p className="text-xs font-mono text-right mt-1 text-red-400">High Disparity</p>
                     </div>
                     <div className="relative h-48 md:h-auto rounded-lg overflow-hidden hud-border">
-                        <Image src="https://images.unsplash.com/photo-1543196614-e046c7d3d82e?q=80&w=1770&auto=format&fit=crop" alt="Students in a classroom" layout="fill" objectFit="cover" />
+                        <Image src="https://images.unsplash.com/photo-1543196614-e046c7d3d82e?q=80&w=1770&auto=format&fit=crop" alt="Students in a classroom" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/50 flex items-end p-4">
                             <p className="text-white font-bold text-sm">Photo: Modern learning environments are a key focus for improvement.</p>
                         </div>
@@ -95,19 +109,8 @@ export default function EducationPage() {
                 <p className="text-brand-gray mb-6">Osun has shown remarkable improvement in national exams, climbing from 33rd to 7th in NECO SSCE rankings by 2024.</p>
                 <div className="hud-bg hud-border p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-brand-light-gray mb-2">WAEC vs. NECO Pass Rates (5 credits incl. Math/Eng)</h3>
-                    {/* Placeholder for dual-axis chart. Using a BarChart for representation. */}
                     <div style={{width: '100%', height: '300px'}}>
-                        <ResponsiveContainer width="100%" height={300}>
-                            <BarChart data={performanceData}>
-                                <CartesianGrid strokeDasharray="3 3" stroke="rgba(102, 244, 225, 0.2)" />
-                                <XAxis dataKey="name" stroke="#8892B0" fontSize={12} />
-                                <YAxis stroke="#8892B0" fontSize={12} />
-                                <Tooltip contentStyle={{ backgroundColor: '#0D1A26', border: '1px solid #1A344D' }} />
-                                <Legend />
-                                <Bar dataKey="WAEC" fill="#66F4E1" name="WAEC Pass %" />
-                                <Bar dataKey="NECO" fill="#7DFDFE" name="NECO Pass %" />
-                            </BarChart>
-                        </ResponsiveContainer>
+                        <EducationBarChart data={performanceData} />
                     </div>
                 </div>
             </section>

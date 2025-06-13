@@ -16,8 +16,8 @@ export default function AboutPage() {
                     <Image 
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1770&auto=format&fit=crop" 
                         alt="Team collaborating on data analysis" 
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
                     />
                 </div>
                 <div className="space-y-4">
@@ -51,9 +51,9 @@ export default function AboutPage() {
                         <h3 className="text-lg font-bold text-brand-light-gray">Partners & Funders</h3>
                         <p className="text-sm text-brand-gray">Supported by a coalition of international development partners and local philanthropic organizations.</p>
                     </div>
-                    <div className="hud-bg hud-border p-6 rounded-lg text-center">
-                        <Image src="https://placehold.co/100x50/0D1A26/66F4E1?text=UNICEF" width={100} height={50} alt="UNICEF Logo" className="mx-auto mb-2 opacity-70"/>
-                        <Image src="https://placehold.co/100x50/0D1A26/66F4E1?text=WORLD+BANK" width={100} height={50} alt="World Bank Logo" className="mx-auto opacity-70"/>
+                    <div className="hud-bg hud-border p-6 rounded-lg text-center flex flex-col justify-center items-center gap-4">
+                        <Image src="https://placehold.co/120x60/0D1A26/66F4E1.svg?text=UNICEF" width={120} height={60} alt="UNICEF Logo" className="opacity-70"/>
+                        <Image src="https://placehold.co/120x60/0D1A26/66F4E1.svg?text=WORLD+BANK" width={120} height={60} alt="World Bank Logo" className="opacity-70"/>
                     </div>
                 </div>
             </div>

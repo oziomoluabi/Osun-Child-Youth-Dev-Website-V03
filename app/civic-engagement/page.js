@@ -51,7 +51,7 @@ export default function CivicEngagementPage() {
                 <h2 className="text-2xl font-bold text-brand-teal mb-4 font-mono">5.3 Civic Engagement Programs</h2>
                 <p className="text-brand-gray mb-6">The state supports various volunteer programs that channel youth energy into productive community service and development projects.</p>
                 <div className="relative h-80 w-full hud-border rounded-lg overflow-hidden">
-                    <Image src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1664&auto=format&fit=crop" layout="fill" objectFit="cover" alt="Youth volunteers in a meeting"/>
+                    <Image src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1664&auto=format&fit=crop" fill className="object-cover" alt="Youth volunteers in a meeting"/>
                     <div className="absolute inset-0 bg-black/70 p-8 flex flex-col justify-end">
                         <h4 className="font-bold text-2xl text-white mb-2">Volunteer Portal</h4>
                         <p className="text-white/80 mb-4 max-w-md">Sign up for Imole Corps, Osun Youth Ambassadors, and other community service projects. View photo and video walls of ongoing activities.</p>

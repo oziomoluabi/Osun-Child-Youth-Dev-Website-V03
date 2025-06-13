@@ -29,7 +29,7 @@ export default function EmploymentSkillsPage() {
                     </div>
                 </div>
                  <div className="mt-6 relative h-64 rounded-lg overflow-hidden hud-border">
-                    <Image src="https://images.unsplash.com/photo-1622363617997-80517f053538?q=80&w=1853&auto=format&fit=crop" alt="Young entrepreneur working" layout="fill" objectFit="cover" />
+                    <Image src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1770&auto=format&fit=crop" alt="Young entrepreneur working" fill className="object-cover" />
                     <div className="absolute inset-0 bg-black/60 flex items-center justify-center p-4">
                         <div className="text-center">
                             <h4 className="text-xl font-bold text-white mb-2">Lived Stories: Young Entrepreneurs</h4>
