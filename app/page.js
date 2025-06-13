@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Briefcase, HeartPulse, Shield, Users, TrendingDown, Users2, BarChart } from 'lucide-react';
+import { ArrowRight, BookOpen, Briefcase, HeartPulse, Shield, Users, TrendingDown } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import { keyDimensions, latestNews } from '@/lib/data';
 import InteractiveMap from '@/components/ui/InteractiveMap';
@@ -7,11 +7,18 @@ import StatWidget from '@/components/ui/StatWidget';
 
 export default function HomePage() {
   const dashboardStats = [
-    { title: 'Out-of-School Children', value: '100,000', change: '▼ Feb 2025', sparklineData: [{value:30}, {value:25}, {value:28}, {value:20}, {value:22}, {value:15}], icon: TrendingDown },
-    { title: 'Youth Unemployment Rate', value: '11.7', unit: '%', change: 'Lowest in SW', sparklineData: [{value:18}, {value:19}, {value:15}, {value:16}, {value:12}, {value:11.7}], icon: Briefcase },
-    { title: 'Adolescent Literacy', value: '89', unit: '%', change: 'Above National Avg', sparklineData: [{value:85}, {value:86}, {value:85}, {value:88}, {value:89}, {value:89}], icon: BookOpen },
-    { title: 'PHC Coverage', value: '95', unit: '%', change: 'High Accessibility', sparklineData: [{value:88}, {value:90}, {value:92}, {value:91}, {value:94}, {value:95}], icon: HeartPulse },
+    { id: 'oos', title: 'Out-of-School Children', value: '100,000', change: '▼ Feb 2025', sparklineData: [{value:30}, {value:25}, {value:28}, {value:20}, {value:22}, {value:15}] },
+    { id: 'unemp', title: 'Youth Unemployment Rate', value: '11.7', unit: '%', change: 'Lowest in SW', sparklineData: [{value:18}, {value:19}, {value:15}, {value:16}, {value:12}, {value:11.7}] },
+    { id: 'literacy', title: 'Adolescent Literacy', value: '89', unit: '%', change: 'Above National Avg', sparklineData: [{value:85}, {value:86}, {value:85}, {value:88}, {value:89}, {value:89}] },
+    { id: 'phc', title: 'PHC Coverage', value: '95', unit: '%', change: 'High Accessibility', sparklineData: [{value:88}, {value:90}, {value:92}, {value:91}, {value:94}, {value:95}] },
   ];
+
+  const dashboardIcons = {
+    oos: <TrendingDown className="w-5 h-5 text-brand-gray" />,
+    unemp: <Briefcase className="w-5 h-5 text-brand-gray" />,
+    literacy: <BookOpen className="w-5 h-5 text-brand-gray" />,
+    phc: <HeartPulse className="w-5 h-5 text-brand-gray" />,
+  };
 
   return (
     <div className="space-y-24 md:space-y-32">
@@ -46,8 +53,10 @@ export default function HomePage() {
       {/* Data Dashboard Teaser */}
       <section id="dashboard" className="section-container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {dashboardStats.map((stat, index) => (
-            <StatWidget key={index} {...stat} />
+          {dashboardStats.map((stat) => (
+            <StatWidget key={stat.id} {...stat}>
+              {dashboardIcons[stat.id]}
+            </StatWidget>
           ))}
         </div>
       </section>

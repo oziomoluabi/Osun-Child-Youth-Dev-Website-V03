@@ -4,7 +4,7 @@ import React from 'react';
 import { ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { motion } from 'framer-motion';
 
-const StatWidget = ({ title, value, change, sparklineData, icon: Icon, unit = '' }) => {
+const StatWidget = ({ title, value, change, sparklineData, unit = '', children }) => {
   const isPositive = change && change.startsWith('▼'); // Assuming ▼ is for decrease (positive change) and ▲ for increase (negative change)
 
   return (
@@ -16,7 +16,7 @@ const StatWidget = ({ title, value, change, sparklineData, icon: Icon, unit = ''
     >
       <div className="flex justify-between items-start">
         <span className="font-mono text-sm text-brand-gray">{title}</span>
-        {Icon && <Icon className="w-5 h-5 text-brand-gray" />}
+        {children}
       </div>
       <div className="my-2">
         <p className="text-3xl font-bold text-brand-light-gray">{value}<span className="text-xl">{unit}</span></p>
