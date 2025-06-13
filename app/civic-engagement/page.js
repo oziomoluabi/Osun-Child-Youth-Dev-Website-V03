@@ -12,12 +12,12 @@ export default function CivicEngagementPage() {
         <>
             <section id="header">
                 <h1 className="text-4xl font-bold text-brand-light-gray mb-2">Youth Participation & Civic Engagement</h1>
-                <p className="text-lg text-brand-gray">Exploring how Osun's youth are shaping their communities and influencing policy through active participation.</p>
+                <p className="text-lg text-brand-gray">Exploring how Osun&apos;s youth are shaping their communities and influencing policy through active participation.</p>
             </section>
 
             <section id="demographics-inclusion">
                 <h2 className="text-2xl font-bold text-brand-teal mb-4 font-mono">5.1 Demographics & Political Inclusion</h2>
-                <p className="text-brand-gray mb-6">With a significant "youth bulge", young people are a powerful demographic. The "Not Too Young To Run" Act has paved the way for more youth in elective office, increasing their representation in governance.</p>
+                <p className="text-brand-gray mb-6">With a significant &quot;youth bulge&quot;, young people are a powerful demographic. The &quot;Not Too Young To Run&quot; Act has paved the way for more youth in elective office, increasing their representation in governance.</p>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div className="hud-bg hud-border p-6 rounded-lg">
                         <p className="font-bold text-4xl text-white">~55%</p>
@@ -25,7 +25,7 @@ export default function CivicEngagementPage() {
                     </div>
                      <div className="hud-bg hud-border p-6 rounded-lg">
                         <UserCheck className="w-10 h-10 mx-auto text-brand-cyan mb-2"/>
-                        <p className="font-bold text-xl text-white">"Not Too Young To Run"</p>
+                        <p className="font-bold text-xl text-white">&quot;Not Too Young To Run&quot;</p>
                         <p className="text-sm text-brand-gray">Impact Dashboard</p>
                     </div>
                     <div className="hud-bg hud-border p-6 rounded-lg">
@@ -71,7 +71,7 @@ export default function CivicEngagementPage() {
                     <div className="flex flex-col md:flex-row items-center gap-6">
                         <Mic className="w-16 h-16 text-brand-teal"/>
                         <div className="flex-grow">
-                            <h4 className="font-bold text-lg text-brand-light-gray">"Have Your Say" on Draft Policies</h4>
+                            <h4 className="font-bold text-lg text-brand-light-gray">&quot;Have Your Say&quot; on Draft Policies</h4>
                             <p className="text-sm text-brand-gray mt-1">An open feedback form allows young citizens to contribute directly to the development of new policies affecting them, ensuring their voices are heard in the legislative process.</p>
                         </div>
                         <button className="bg-brand-teal text-brand-dark font-bold py-2 px-6 rounded-lg whitespace-nowrap">Submit Feedback</button>

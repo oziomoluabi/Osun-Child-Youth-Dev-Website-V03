@@ -10,12 +10,12 @@ export default function ChildProtectionPage() {
 
             <section id="legal-framework">
                 <h2 className="text-2xl font-bold text-brand-teal mb-4 font-mono">4.1 Legal Framework & Institutions</h2>
-                <p className="text-brand-gray mb-6">Osun is one of 36 states to have domesticated the Child's Right Act (CRA), establishing a strong legal basis for child protection, supported by the Ministry of Women, Children, and Social Affairs.</p>
+                <p className="text-brand-gray mb-6">Osun is one of 36 states to have domesticated the Child&apos;s Right Act (CRA), establishing a strong legal basis for child protection, supported by the Ministry of Women, Children, and Social Affairs.</p>
                 <div className="hud-bg hud-border p-6 rounded-lg">
                     <div className="flex items-center gap-4">
                         <Gavel className="w-10 h-10 text-brand-cyan"/>
                         <div>
-                            <h4 className="font-bold text-lg text-brand-light-gray">Child's Right Act (CRA)</h4>
+                            <h4 className="font-bold text-lg text-brand-light-gray">Child&apos;s Right Act (CRA)</h4>
                             <p className="text-sm text-brand-gray">Provides a comprehensive framework covering rights to survival, development, protection, and participation.</p>
                         </div>
                     </div>

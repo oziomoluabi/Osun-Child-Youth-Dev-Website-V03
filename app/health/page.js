@@ -87,7 +87,7 @@ export default function HealthPage() {
                     <Image src="https://images.unsplash.com/photo-1576091160550-2173dba9996a?q=80&w=1770&auto=format&fit=crop" alt="Healthcare worker with a laptop" layout="fill" objectFit="cover" />
                     <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-4">
                         <Radio className="w-12 h-12 text-brand-teal mb-4"/>
-                        <h4 className="text-xl font-bold text-white">Community Radio "Youth Voice"</h4>
+                        <h4 className="text-xl font-bold text-white">Community Radio &quot;Youth Voice&quot;</h4>
                         <p className="text-white/80 max-w-lg">Embedded podcasts and resource hubs provide crucial SRH and mental health information directly to adolescents.</p>
                     </div>
                 </div>

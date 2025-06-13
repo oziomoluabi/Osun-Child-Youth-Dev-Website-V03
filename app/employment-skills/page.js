@@ -33,7 +33,7 @@ export default function EmploymentSkillsPage() {
                     <div className="absolute inset-0 bg-black/60 flex items-center justify-center p-4">
                         <div className="text-center">
                             <h4 className="text-xl font-bold text-white mb-2">Lived Stories: Young Entrepreneurs</h4>
-                            <p className="text-white/80 max-w-md">Short video profiles showcase the resilience and innovation of young business owners in Osun's informal sector.</p>
+                            <p className="text-white/80 max-w-md">Short video profiles showcase the resilience and innovation of young business owners in Osun&apos;s informal sector.</p>
                             <button className="mt-4 bg-brand-teal text-brand-dark font-bold py-2 px-4 rounded hover:bg-brand-cyan transition-colors">Watch Now</button>
                         </div>
                     </div>
